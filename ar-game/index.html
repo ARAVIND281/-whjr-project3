@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ar game</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-spe-particles-component@^1.0.4/dist/aframe-spe-particles-component.min.js"></script>
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+    <script src="https://raw.githack.com/whitehatjr/ar-gesture-handler/main/index.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="table1" src="./assets/table1/scene.gltf"></a-asset-item>
+            <a-asset-item id="table2" src="./assets/table2/scene.gltf"></a-asset-item>
+            <a-asset-item id="clock" src="./assets/Clock.glb"></a-asset-item>
+        </a-assets>
+        <a-entity>
+            <a-camera position="-5 0 5"></a-camera>
+            <a-box height="7" width="0.5" depth="14" color="pink" position="-10 0 0" />
+            <a-box height="7" width="0.5" depth="14" color="pink" position="10 0 0" />
+            <a-box height="7" width="10" depth="1" color="pink" position="-5 0 -3" />
+            <a-box height="0.5" width="10.5" depth="14" color="pink" position="0 3.5 3" />
+            <a-box height="7" width="10" depth="1" color="pink" position="0 -3.5 6.5" />
+            <a-entity id="table1" gltf-model="#table1" gesture-handler animation-mixer position="-3 -3 -6.8" scale="0.5 0.5 0.5"/>
+            <a-entity id="table2" gltf-model="#table2" gesture-handler animation-mixer position="12 0.8 -3" scale="4 4 4"/>
+            <a-box height="5" width="5" depth="1" color="green" position="0 0.8 -5" />
+            <!-- <a-entity id="clock" gltf-model="#clock" gesture-handler animation-mixer position="0 0.8 5" scale="2.5 2.5 2.5"/> -->
+            <!--a-entity id="clock" obj-model="obj: #clock" gesture-handler animation-mixer position="-3 -1 -6.8" scale="2.5 2.5 2.5"/-->
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
