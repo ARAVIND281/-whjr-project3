@@ -8,6 +8,8 @@
         src="https://unpkg.com/aframe-spe-particles-component@^1.0.4/dist/aframe-spe-particles-component.min.js"></script>
     <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
     <script src="https://raw.githack.com/whitehatjr/ar-gesture-handler/main/index.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="./js/CursorEvents.js"></script>
 </head>
 
 <body>
@@ -17,19 +19,33 @@
             <a-asset-item id="table2" src="./assets/table2/scene.gltf"></a-asset-item>
             <a-asset-item id="clock" src="./assets/Clock.glb"></a-asset-item>
         </a-assets>
-        <a-entity>
-            <a-camera position="-5 0 5"></a-camera>
+        <a-entity cursor-listener>
+            <a-camera position="-5 0 5" wasd-controls="enabled:true;">
+
+                <a-entity id="camera-cursor" cursor position="-3 0 -6.8"
+                    geometry="primitive: ring; radiusInner: 0.2; radiusOuter: 0.3"
+                    material="color: #283593; shader: flat">
+                </a-entity>
+                <a-entity
+          id="app-title"
+          position="-0.08 0.73 -1"
+          text="font: exo2bold; align: center; width: 1.5; color: #e91e63; value: Escape Room"
+        >
+            </a-camera>
             <a-box height="7" width="0.5" depth="14" color="pink" position="-10 0 0" />
             <a-box height="7" width="0.5" depth="14" color="pink" position="10 0 0" />
             <a-box height="7" width="10" depth="1" color="pink" position="-5 0 -3" />
             <a-box height="0.5" width="10.5" depth="14" color="pink" position="0 3.5 3" />
             <a-box height="7" width="10" depth="1" color="pink" position="0 -3.5 6.5" />
-            <a-entity id="table1" gltf-model="#table1" gesture-handler animation-mixer position="-3 -3 -6.8" scale="0.5 0.5 0.5"/>
-            <a-entity id="table2" gltf-model="#table2" gesture-handler animation-mixer position="12 0.8 -3" scale="4 4 4"/>
+            <a-entity id="table1" gltf-model="#table1" gesture-handler animation-mixer position="-3 -3 -6.8"
+                scale="0.5 0.5 0.5" />
+            <a-entity id="table2" gltf-model="#table2" gesture-handler animation-mixer position="12 0.8 -3"
+                scale="4 4 4" />
             <a-box height="5" width="5" depth="1" color="green" position="0 0.8 -5" />
             <!-- <a-entity id="clock" gltf-model="#clock" gesture-handler animation-mixer position="0 0.8 5" scale="2.5 2.5 2.5"/> -->
             <!--a-entity id="clock" obj-model="obj: #clock" gesture-handler animation-mixer position="-3 -1 -6.8" scale="2.5 2.5 2.5"/-->
-        </a-entity>
+
+
     </a-scene>
 </body>
 
